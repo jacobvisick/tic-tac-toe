@@ -93,11 +93,11 @@ class Game
 
     public
     def play_round
-        gameIsWon = nil
+        game_is_won = nil
         board = Board.new
         turns_played = 0
         
-        while(!gameIsWon)
+        while(!game_is_won)
             # stop playing if there's a tie game
             break if turns_played >= 9
 
@@ -117,9 +117,10 @@ class Game
             end
 
             # Board.play_turn returns nil unless there's a winner
-            gameIsWon = board.play_turn(team, x, y)
+            game_is_won = board.play_turn(team, x, y)
             turns_played += 1
-            break if gameIsWon
+            break if game_is_won
+    
 
             # Swap current player before redoing loop
             @current_player == @player_x ? @current_player = @player_o : @current_player = @player_x
@@ -127,8 +128,8 @@ class Game
         
         board.display_board
 
-        if gameIsWon
-            gameIsWon == "X" ? winner = @player_x[:name] : winner = @player_o[:name]
+        if game_is_won
+            game_is_won == "X" ? winner = @player_x[:name] : winner = @player_o[:name]
             game_won(winner)
         else
             tie_game
