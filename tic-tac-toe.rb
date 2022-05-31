@@ -101,7 +101,7 @@ class Game
     end
 
     public
-    def start_game
+    def play_round
         gameIsWon = nil
         board = Board.new
         turns_played = 0
@@ -197,4 +197,4 @@ game = Game.new(player_x, player_o)
 
 puts "Enter your moves as coordinates on board 'x, y'"
 puts "For example, for the top left corner, enter '1, 3'"
-game.start_game
+game.play_round
