@@ -128,7 +128,7 @@ class Game
         board.display_board
 
         if gameIsWon
-            gameIsWon.upcase == "X" ? winner = @player_x[:name] : winner = @player_o[:name]
+            gameIsWon == "X" ? winner = @player_x[:name] : winner = @player_o[:name]
             game_won(winner)
         else
             tie_game
