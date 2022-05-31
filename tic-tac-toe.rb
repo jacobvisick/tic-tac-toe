@@ -79,9 +79,7 @@ class Board
             y3 = win[2][1].to_i
 
             if @moves[x1][y1] == @moves[x2][y2] && @moves[x2][y2] == @moves[x3][y3] &&
-                @moves[x1][y1] != " " &&
-                @moves[x2][y2] != " " &&
-                @moves[x3][y3] != " "
+                @moves[x1][y1] != " "
                     player_won = true
                     winner = @moves[x1][y1]
             end
