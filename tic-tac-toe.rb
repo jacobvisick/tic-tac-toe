@@ -185,9 +185,11 @@ end
 puts "Welcome to Tic-Tac-Toe!"
 puts "Who will play X's?"
 player_x = gets.chomp
+player_x = "Player 1" if player_x.length == 0
 
 puts "Who will play O's?"
 player_o = gets.chomp
+player_o = "Player 2" if player_o.length == 0
 
 puts "#{player_x} vs #{player_o}"
 
