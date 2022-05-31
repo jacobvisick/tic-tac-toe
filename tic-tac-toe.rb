@@ -39,13 +39,6 @@ class Board
                   "---+---+--- \n" \
                   " #{@moves[1][1]} | #{@moves[2][1]} | #{@moves[3][1]}  \n"
     end
-    
-    def fake_win
-        #just for testing
-        @moves[1][1] = "x" 
-        @moves[2][1] = "x"
-        @moves[3][1] = "x"
-    end
 
     def check_wins
         #return winning team if winner, else return nil
@@ -162,7 +155,6 @@ class Game
     end
 
     def validate_move(move)
-        #require 'pry-byebug'; binding.pry
         move = move.delete(" ").delete(",").delete("'").delete('"')
         return unless move.length == 2
         return unless move[0].to_i.between?(1, 3)
